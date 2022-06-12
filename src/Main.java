@@ -32,6 +32,19 @@ public class Main {
         return os;
     }
 
+    public static int deliveryCard(int distance) {
+        if (distance <= 20) {
+            System.out.println("доставка будет осуществлена в течении дня");
+        } else if ((distance > 20) && (distance <= 60)) {
+            System.out.println("доставка будет осуществлена в течении 2х дней");
+        } else if ((distance > 60) && (distance <= 100)) {
+            System.out.println("доставка будет осуществлена в течении 3х дней");
+        } else {
+            System.out.println("срок доставки неизвестен");
+        }
+        return distance;
+    }
+
     public static void main(String[] args) {
         int[] years = {2000, 2002, 2004, 2006,};
         printSeparator();
@@ -43,6 +56,8 @@ public class Main {
         checkApp(os, year);
         printSeparator();
 
-
+        int distance = 21;
+        deliveryCard(distance);
+        printSeparator();
     }
 }
