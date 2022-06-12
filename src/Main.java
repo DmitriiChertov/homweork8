@@ -34,29 +34,29 @@ public class Main {
 
     public static int deliveryCard(int distance) {
         if (distance <= 20) {
-            System.out.println("доставка будет осуществлена в течении дня");
+            System.out.println("доставка будет осуществлена в течении дня.");
         } else if ((distance > 20) && (distance <= 60)) {
-            System.out.println("доставка будет осуществлена в течении 2х дней");
+            System.out.println("доставка будет осуществлена в течении 2х дней.");
         } else if ((distance > 60) && (distance <= 100)) {
-            System.out.println("доставка будет осуществлена в течении 3х дней");
-        } else {
-            System.out.println("срок доставки неизвестен");
-        }
+            System.out.println("доставка будет осуществлена в течении 3х дней.");
+        } else if (distance > 100) {
+            int day = (distance + 59) / 40;
+                System.out.println(day + " дней для доставки.");
+            }
         return distance;
-    }
-
+        }
     public static void main(String[] args) {
         int[] years = {2000, 2002, 2004, 2006,};
         printSeparator();
         checkYear(years);
         printSeparator();
 
-        int os = 0;
-        int year = 2016;
+        int os = 0; // 1 - Android; 2 - iOs;
+        int year = 2016; // Год выпуска гаджета;
         checkApp(os, year);
         printSeparator();
 
-        int distance = 21;
+        int distance = 35; // Расстояние до получателя;
         deliveryCard(distance);
         printSeparator();
     }
