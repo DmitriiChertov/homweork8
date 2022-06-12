@@ -10,10 +10,13 @@ public class Main {
     public static int checkYear(int[] years) {
         int year = 0;
         for (int i = 0; i < years.length; i++) {
-            year = years[i] % 4;
-            if (year == 0 || years[i] % 400 == 0 || years[i] % 100 == 0) {
+            if (years[i] % 4 == 0 && years[i] % 100 != 0) {
                 System.out.println(years[i] + " год является високосным.");
-            } else if (year != 0) {
+            } else if (years[i] % 4 != 0) {
+                System.out.println(years[i] + " год не является високосным.");
+            } else if (years[i] % 100 == 0 && years[i] % 400 == 0) {
+                System.out.println(years[i] + " год является високосным.");
+            } else {
                 System.out.println(years[i] + " год не является високосным.");
             }
         }
@@ -46,7 +49,7 @@ public class Main {
         return distance;
         }
     public static void main(String[] args) {
-        int[] years = {2000, 2002, 2004, 2006,};
+        int[] years = {2000, 2002, 2004, 2006, 1600, 1900, 1888, 1700, 1800,};
         printSeparator();
         checkYear(years);
         printSeparator();
@@ -56,7 +59,7 @@ public class Main {
         checkApp(os, year);
         printSeparator();
 
-        int distance = 35; // Расстояние до получателя;
+        int distance = 140; // Расстояние до получателя;
         deliveryCard(distance);
         printSeparator();
     }
